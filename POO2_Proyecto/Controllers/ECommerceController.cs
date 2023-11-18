@@ -19,6 +19,8 @@ public class ECommerceController : Controller
         _configuration = configuration;
     }
 
+
+
     private IEnumerable<Libro> ObtenerLibros()
     {
         List<Libro> lista_libros = new List<Libro>();
@@ -51,10 +53,14 @@ public class ECommerceController : Controller
         return lista_libros;
     }
 
+
+
     private Libro BuscarLibro(int id)
     {
         return ObtenerLibros().FirstOrDefault(c => c.IdLibro == id);
     }
+
+
 
     [HttpGet]
     public IActionResult Index()
@@ -66,6 +72,8 @@ public class ECommerceController : Controller
         return View(ObtenerLibros());
     }
 
+
+
     [HttpGet]
     public IActionResult Select(int? id = null)
     {
@@ -74,9 +82,12 @@ public class ECommerceController : Controller
         return View(BuscarLibro(id.Value));
     }
 
+
+
     [HttpPost]
     public IActionResult Select(int IdLibro, int cantidad)
     {
+        string mensaje = "";
         Libro reg = BuscarLibro(IdLibro);
 
         List<Registro> auxiliar = JsonConvert.DeserializeObject<List<Registro>>(HttpContext.Session.GetString("carrito"));
@@ -102,10 +113,12 @@ public class ECommerceController : Controller
         // Actualiza la sesión con el mismo nombre "carrito"
         HttpContext.Session.SetString("carrito", JsonConvert.SerializeObject(auxiliar));
 
-        ViewBag.mensaje = $"Tiene un pedido de {item.Cantidad} unidades del libro {item.Título}";
+        mensaje = $"Tiene un pedido de {item.Cantidad} unidades del libro {item.Título}";
 
-        return View(reg);
+        return RedirectToAction("ShowAlert", new { msj = mensaje });
     }
+
+
 
     [HttpGet]
     public IActionResult Carrito()
@@ -181,7 +194,7 @@ public class ECommerceController : Controller
                 }
 
                 tr.Commit();
-                mensaje = $"Se ha registrado el pedido de número {idPedido} satisfactoriamente";
+                mensaje = $"Se ha registrado el pedido de numero {idPedido} satisfactoriamente";
             }
             catch (Exception ex)
             {
@@ -194,15 +207,15 @@ public class ECommerceController : Controller
             }
         }
 
-        return RedirectToAction("Mensaje", new { msj = mensaje });
+        return RedirectToAction("ShowAlert", new { msj = mensaje });
     }
 
     [HttpGet]
-    public IActionResult Mensaje(string msj)
+    public IActionResult ShowAlert(string msj)
     {
         ViewBag.mensaje = msj;
 
-        HttpContext.Session.Clear();
-        return View();
+        return View("ShowAlert");
     }
+
 }

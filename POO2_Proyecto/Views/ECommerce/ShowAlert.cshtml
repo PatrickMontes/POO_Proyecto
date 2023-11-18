@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowAlert</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+
+    <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+
+            <!-- Aquí puedes agregar cualquier estructura HTML para el mensaje de alerta -->
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: '@ViewBag.mensaje'
+                }).then(function () {
+                    // Redirige o realiza otras acciones según tus necesidades
+                    window.location.href = '@Url.Action("Index", "ECommerce")';
+                });
+            </script>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
