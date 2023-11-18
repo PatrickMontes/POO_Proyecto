@@ -79,5 +79,63 @@ namespace POO2_Proyecto.Data
 
             return null;
         }
+
+
+
+        public void AgregarUsuario(Usuario usuario)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO Usuario (Nombre, Correo, Clave, IdRol) VALUES (@Nombre, @Correo, @Clave, @IdRol)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                    command.Parameters.AddWithValue("@Correo", usuario.Correo);
+                    command.Parameters.AddWithValue("@Clave", usuario.Clave);
+                    command.Parameters.AddWithValue("@IdRol", (int)usuario.IdRol);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+        public Usuario ValidarCorreo(string correo)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT IdUsuario, Nombre, Correo, Clave, IdRol FROM Usuario WHERE Correo = @Correo";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Correo", correo);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Usuario
+                            {
+                                IdUsuario = (int)reader["IdUsuario"],
+                                Nombre = reader["Nombre"].ToString(),
+                                Correo = reader["Correo"].ToString(),
+                                Clave = reader["Clave"].ToString(),
+                                IdRol = (Rol)reader["IdRol"]
+                            };
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+
+
+
     }
 }

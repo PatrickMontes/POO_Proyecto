@@ -127,3 +127,4 @@ create procedure sp_pedidoDetalle_agregar
 as
 	insert PedidoDetalle values(@idPedido, @idLibro, @precio, @cantidad)
 
+	select*from Pedido
