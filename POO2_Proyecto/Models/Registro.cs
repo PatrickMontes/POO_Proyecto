@@ -9,18 +9,5 @@
         public int Cantidad { get; set; }
         public decimal Monto { get { return Precio * Cantidad; } }
 
-        public Registro()
-        {
-        }
-
-        public Registro(int id, string título, string imagen, decimal precio, int cantidad)
-        {
-            IdRegistro = id;
-            Título = título;
-            Imagen = imagen;
-            Precio = precio;
-            Cantidad = cantidad;
-        }
-
     }
 }

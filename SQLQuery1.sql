@@ -76,7 +76,7 @@ as begin
 		where IdLibro = @IdLibro
 end
 
-
+set datetime dmy
 --***************--CARRITO COMPRAS--***************--
 create table Pedido(
 	idPedido varchar(8) primary key,
@@ -127,4 +127,11 @@ create procedure sp_pedidoDetalle_agregar
 as
 	insert PedidoDetalle values(@idPedido, @idLibro, @precio, @cantidad)
 
-	select*from Pedido
+	select*from PedidoDetalle
+
+create procedure sp_historialPedidos
+as
+    SELECT p.idPedido, p.nomCliente, p.fechaPedido, pd.Precio
+    FROM Pedido p
+    JOIN PedidoDetalle pd ON p.idPedido = pd.idPedido;
+

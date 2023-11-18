@@ -23,7 +23,10 @@
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Libro" asp-action="MantenimientoLibro">Mantenimiento</a>
-                            </li>                           
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Libro" asp-action="HistorialPedidos">Historial Pedidos</a>
+                            </li>
                         }
                         else if (User.IsInRole("Cliente"))
                         {

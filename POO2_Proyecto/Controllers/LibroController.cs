@@ -203,5 +203,49 @@ namespace POO2_Proyecto.Controllers
                 return RedirectToAction("MantenimientoLibro");
             }
         }
+
+
+
+        private List<HistorialPedidoViewModel> ObtenerHistorialPedidos()
+        {
+            List<HistorialPedidoViewModel> historialPedidos = new List<HistorialPedidoViewModel>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new("sp_historialPedidos", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            HistorialPedidoViewModel pedido = new HistorialPedidoViewModel
+                            {
+                                IdPedido = Convert.ToInt32(reader["IdPedido"]),
+                                NomCliente = reader["NomCliente"].ToString(),
+                                FechaPedido = Convert.ToDateTime(reader["FechaPedido"]),
+                                Precio = Convert.ToDecimal(reader["Precio"])
+                            };
+
+                            historialPedidos.Add(pedido);
+                        }
+                    }
+                }
+            }
+
+            return historialPedidos;
+        }
+
+
+
+
+        [HttpGet]
+        public IActionResult HistorialPedidos()
+        {
+            var historialPedidos = ObtenerHistorialPedidos();
+            return View("HistorialPedidos", historialPedidos);
+        }
     }
 }
