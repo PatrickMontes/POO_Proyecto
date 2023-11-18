@@ -1,0 +1,109 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = POO2_Proyecto
+build_property.RootNamespace = POO2_Proyecto
+build_property.ProjectDir = C:\Users\USER\Documents\POO_Proyecto\POOProyecto\POO2_Proyecto\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\USER\Documents\POO_Proyecto\POOProyecto\POO2_Proyecto
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Acceso/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/ECommerce/Carrito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUNvbW1lcmNlXENhcnJpdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/ECommerce/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUNvbW1lcmNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/ECommerce/Mensaje.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUNvbW1lcmNlXE1lbnNhamUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/ECommerce/Pedido.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUNvbW1lcmNlXFBlZGlkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/ECommerce/Select.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUNvbW1lcmNlXFNlbGVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Home/Clientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDbGllbnRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Home/Compras.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21wcmFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Home/Ventas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZW50YXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Libro/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Libro/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Libro/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cRWxpbWluYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Libro/MantenimientoLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cTWFudGVuaW1pZW50b0xpYnJvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Shared/_PartialCarrito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsQ2Fycml0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Shared/_PartialRegistro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsUmVnaXN0cm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Shared/_PartialVenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsVmVudGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Documents/POO_Proyecto/POOProyecto/POO2_Proyecto/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-9y9k5hpon7

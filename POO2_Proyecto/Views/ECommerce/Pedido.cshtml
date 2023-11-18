@@ -1,0 +1,60 @@
+﻿@using POO2_Proyecto.Models
+@model Pedido
+
+@{
+    ViewBag.Title = "Pedido";
+}
+
+<h2 style="text-align:center">Registro de Pedido</h2>
+<br />
+<div style="display: grid; grid-template-columns:1fr 1fr">
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.LabelFor(model => model.dniCliente, new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.dniCliente)
+                    @Html.ValidationMessageFor(model => model.dniCliente)
+                </div>
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.nomCliente, new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.nomCliente)
+                    @Html.ValidationMessageFor(model => model.nomCliente)
+                </div>
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.emailCliente, new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.emailCliente)
+                    @Html.ValidationMessageFor(model => model.emailCliente)
+                </div>
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.telefono, new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.telefono)
+                    @Html.ValidationMessageFor(model => model.telefono)
+                </div>
+            </div>
+
+            <div>
+                <br />
+                <div>
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        }
+    </div>
+
+    <div>
+        <div>
+            @Html.Partial("_PartialCarrito", (List<Registro>)ViewBag.carrito)
+        </div>
+    </div>
+</div>

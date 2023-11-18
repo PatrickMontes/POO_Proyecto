@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Listado";
+}
+
+<a asp-action="Crear" asp-controller="Libro" class="btn btn-outline-primary">Crear Registro</a>
+<br />
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Título</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.listado)
+        {
+            <tr>
+                <td><img src="data:image/jpg; base64, @item.Imagen" style="max-height: 50px; object-fit: contain;" /></td>
+                <td>@item.Título</td>
+                <td>@item.Precio</td>
+                <td>@item.Stock</td>
+                <td>
+                    <a asp-action="Editar" asp-controller="Libro" asp-route-id="@item.IdLibro" class="btn btn-outline-warning">Editar</a>
+                    <a asp-action="Eliminar" asp-controller="Libro" asp-route-id="@item.IdLibro" class="btn btn-outline-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

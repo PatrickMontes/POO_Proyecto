@@ -1,0 +1,78 @@
+﻿@model Libro
+@{
+    ViewData["Title"] = "Eliminar";
+}
+<a class="btn btn-outline-dark" type="button" asp-controller="Libro" asp-action="MantenimientoLibro">Volver</a>
+<br />
+<br />
+<form enctype="multipart/form-data" class="container-fluid" method="post" id="eliminarForm">
+    <div class="card mb-6">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="data:image/jpg; base64, @Model.Imagen" class="rounded" width="400">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Registro</h5>
+                    <table class="table">
+                        <input hidden asp-for="IdLibro" />
+                        <tr>
+                            <td>
+                                <label clas="form-label">Titulo:</label>
+                            </td>
+                            <td>
+                                <input disabled type="text" class="form-control" asp-for="Título" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label clas="form-label">Precio:</label>
+                            </td>
+                            <td>
+                                <input disabled type="number" class="form-control" asp-for="Precio" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label clas="form-label">Stock:</label>
+                            </td>
+                            <td>
+                                <input disabled type="number" class="form-control" asp-for="Stock" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="btn btn-outline-danger" id="eliminarBtn">Eliminar</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<label class="alert-danger">@ViewBag.error</label>
+
+@section scripts{
+    <script>
+        document.getElementById('eliminarBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Esta seguro?',
+                text: 'Desea eliminar este producto?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Si, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('eliminarForm').submit();
+                }
+            });
+        });
+    </script>
+    }

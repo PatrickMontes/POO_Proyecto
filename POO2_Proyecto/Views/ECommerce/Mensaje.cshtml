@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Mensaje";
+}
+
+<h2>Portal de Ventas</h2>
+
+
+<div>
+    <h3 style="text-align:center;">@ViewBag.mensaje</h3>
+</div>
+
+<div>
+    @Html.ActionLink("Ir al Portal", "Index", null, new { @class = "btn btn-success" })
+</div>

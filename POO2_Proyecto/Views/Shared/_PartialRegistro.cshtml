@@ -1,0 +1,22 @@
+﻿@model POO2_Proyecto.Models.Libro
+
+<link rel="stylesheet" href="./css/style-commerce.css"/>
+
+
+<div class="div-agregar">
+    <div>
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.IdLibro)</dt>
+            <dd>@Html.DisplayFor(model => model.IdLibro)</dd>
+            <dt>@Html.DisplayNameFor(model => model.Título)</dt>
+            <dd>@Html.DisplayFor(model => model.Título)</dd>
+            <dt>@Html.DisplayNameFor(model => model.Precio)</dt>
+            <dd>@Html.DisplayFor(model => model.Precio)</dd>
+            <dt>@Html.DisplayNameFor(model => model.Stock)</dt>
+            <dd>@Html.DisplayFor(model => model.Stock)</dd>
+        </dl>
+    </div>
+    <div>
+        <img src="data:image/jpg; base64, @Model.Imagen" class="img-producto" style="width: 200px; height:400px;">
+    </div>
+</div>

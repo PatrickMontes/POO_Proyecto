@@ -1,0 +1,21 @@
+﻿@model IEnumerable<POO2_Proyecto.Models.Registro>
+
+<table class="table">
+    <tr></tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Título)</td>
+            <td><img src="data:image/jpg; base64, @item.Imagen" style="max-height: 50px; object-fit: contain;" /></td>
+            <td>@Html.DisplayFor(modelItem => item.Precio)</td>
+            <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+            <td>@Html.DisplayFor(modelItem => item.Monto)</td>
+            <td>@Html.ActionLink("Delete", "Delete", new {id = item.IdRegistro})</td>
+        </tr>
+    }
+    <tr>
+        <td colspan="5" style="text-align:right">Monto del Pedido</td>
+        <td>@Model.Sum(x => x.Monto)</td>
+    </tr>
+</table>

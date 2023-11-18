@@ -1,0 +1,85 @@
+﻿@model Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10" />
+</head>
+<body>
+
+    <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+
+            <form asp-controller="Acceso" asp-action="Index" method="post" id="loginForm">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" asp-for="Correo">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" asp-for="Clave">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#loginForm").submit(function (e) {
+                e.preventDefault();
+
+                // Obtén los datos del formulario
+                var formData = {
+                    Correo: $("#Correo").val(),
+                    Clave: $("#Clave").val()
+                };
+
+                // Realiza la petición AJAX al servidor
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Index", "Acceso")', // Ajusta la URL según tus rutas
+                    data: formData,
+                    success: function (result) {
+                        // Verifica la respuesta del servidor y muestra el mensaje correspondiente
+                        if (result.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Éxito',
+                                text: 'Inicio de sesión exitoso'
+                            });
+                            // Redirige o realiza otras acciones según tus necesidades
+                            window.location.href = '@Url.Action("Index", "Home")';
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Credenciales incorrectas'
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Error al comunicarse con el servidor'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<POO2_Proyecto.Models.Libro>
+
+<p>@Html.ActionLink("Ir al Carrito", "Carrito", null, new { @class="btn btn-success" })</p>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col" style="width: 15rem;">
+            <div class="card h-100">
+                <img src="data:image/jpg; base64, @item.Imagen" style="max-height: 30vh; object-fit: contain;"
+                     class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@item.Título</h5>
+                    <p class="card-text">
+                        <label style="font-weight: 700">Precio:</label> @item.Precio
+                        <br />
+                        <label style="font-weight: 700">Stock:</label> @item.Stock
+                    </p>
+                </div>
+                <div class="card-footer text-center">
+                    @Html.ActionLink("Select", "Select", new { id = item.IdLibro }, new { @class = "btn btn-outline-warning " + (item.Stock == 0 ? "deshabilita" : "")} )
+                </div>
+            </div>
+        </div>
+    }
+</div>

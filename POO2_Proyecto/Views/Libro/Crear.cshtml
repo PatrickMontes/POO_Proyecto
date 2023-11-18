@@ -1,0 +1,75 @@
+﻿@model Libro
+@{
+    ViewData["Title"] = "Crear";
+}
+<a class="btn btn-outline-dark" type="button" asp-controller="Libro" asp-action="MantenimientoLibro">Volver</a>
+<br />
+<br />
+
+<form enctype="multipart/form-data" method="post" class="container" id="crearForm">
+    <h3>Insertar registro</h3>
+    <table class="table">
+        <tr>
+            <td>
+                <label clas="form-label">Titulo:</label>
+            </td>
+            <td>
+                <input required type="text" class="form-control" asp-for="Título" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label clas="form-label">Imagen:</label>
+            </td>
+            <td>
+                <input required type="file" class="form-control" asp-for="File" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label clas="form-label">Precio:</label>
+            </td>
+            <td>
+                <input required type="number" class="form-control" asp-for="Precio" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label clas="form-label">Stock:</label>
+            </td>
+            <td>
+                <input required type="number" class="form-control" asp-for="Stock" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" class="btn btn-outline-success">Insertar</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<label class="alert-danger">@ViewBag.error</label>
+
+@section scripts{
+    <script>
+        document.getElementById('crearForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Esta seguro?',
+                text: 'Desea insertar este producto?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    e.target.submit();
+                }
+            });
+        });
+    </script>
+}

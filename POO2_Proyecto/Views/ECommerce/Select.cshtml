@@ -1,0 +1,26 @@
+﻿@model POO2_Proyecto.Models.Libro
+@{
+    ViewData["Title"] = "Seleccionar";
+}
+
+<h1>Producto Seleccionado</h1>
+
+@Html.Partial("_PartialRegistro")
+
+<div class="div-agregar-form">
+    @using (Html.BeginForm())
+    {
+        @Html.Hidden("IdLibro", Model.IdLibro)
+        <div>
+            <em>Ingrese la cantidad</em>
+            @Html.TextBox("cantidad", 1, new{ type = "number", min = 1, max = Model.Stock })
+        </div>
+        <div>
+            <input type="submit" value="Agregar" class="btn btn-danger"/> |
+            @Html.ActionLink("Retornar", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+    <div>
+        @ViewBag.mensaje
+    </div>
+</div>

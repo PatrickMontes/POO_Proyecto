@@ -1,0 +1,12 @@
+﻿@model IEnumerable<POO2_Proyecto.Models.Registro>
+
+<h2>Carrito de Compras</h2>
+
+<p>
+    @Html.ActionLink("Seguir Comprando", "Index", null, new {@class="btn btn-sucess"})
+    @Html.ActionLink("Registrar Pedido", "Pedido", null, new {@class = "btn btn-primary"})
+</p>
+
+<div>
+    @Html.Partial("_PartialCarrito")
+</div>

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<POO2_Proyecto.Models.Libro>
+
+@{
+    ViewData["Tittle"] = "Portal";
+}
+
+<link rel="stylesheet" href="~/css/style-commerce.css" />
+
+<h2>Portal de Ventas: Tienda</h2>
+
+<div>
+    @Html.Partial("_PartialVenta")
+</div>
