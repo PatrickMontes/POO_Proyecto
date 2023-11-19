@@ -8,6 +8,20 @@
 
 <h2>Portal de Ventas: Tienda</h2>
 
+<br />
+
+<div>
+<form asp-controller="ECommerce" asp-action="BuscarLibro" method="get">
+    <div class="form-group">
+        <label for="nombreLibro">Nombre del Libro:</label>
+        <input type="text" id="nombreLibro" name="nombreLibro" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+</div>
+
+<br />
+
 <div>
     @Html.Partial("_PartialVenta")
 </div>

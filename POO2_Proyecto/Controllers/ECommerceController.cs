@@ -72,6 +72,18 @@ public class ECommerceController : Controller
         return View(ObtenerLibros());
     }
 
+    [HttpGet]
+    public IActionResult BuscarLibro(string nombreLibro)
+    {
+        IEnumerable<Libro> libros = ObtenerLibros();
+
+        if (!string.IsNullOrEmpty(nombreLibro))
+        {
+            libros = libros.Where(l => l.Título.Contains(nombreLibro, StringComparison.OrdinalIgnoreCase));
+        }
+
+        return View("Index", libros);
+    }
 
 
     [HttpGet]
