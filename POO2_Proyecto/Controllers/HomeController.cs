@@ -22,24 +22,6 @@ namespace POO2_Proyecto.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrador,Cliente")]
-        public IActionResult Ventas()
-        {
-            return View();
-        }
-
-        [Authorize(Roles = "Administrador,Cliente")]
-        public IActionResult Compras()
-        {
-            return View();
-        }
-
-        [Authorize(Roles = "Administrador")]
-        public IActionResult Clientes()
-        {
-            return View();
-        }
-
         [AllowAnonymous]
         public IActionResult Privacy()
         {

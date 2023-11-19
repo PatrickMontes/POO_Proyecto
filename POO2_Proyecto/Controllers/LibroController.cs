@@ -9,12 +9,17 @@ namespace POO2_Proyecto.Controllers
     [Authorize(Roles = "Administrador")]
     public class LibroController : Controller
     {
+
         private readonly string connectionString;
+
+
 
         public LibroController(string connectionString)
         {
             this.connectionString = connectionString;
         }
+
+
 
         public IActionResult MantenimientoLibro()
         {
@@ -45,10 +50,13 @@ namespace POO2_Proyecto.Controllers
         }
 
 
+
         public IActionResult Crear()
         {
             return View();
         }
+
+
 
         [HttpPost]
         public IActionResult Crear(Libro libro)
@@ -92,6 +100,7 @@ namespace POO2_Proyecto.Controllers
         }
 
 
+
         public IActionResult Editar(int id)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -115,6 +124,8 @@ namespace POO2_Proyecto.Controllers
                 return View(registro);
             }
         }
+
+
 
         [HttpPost]
         public IActionResult Editar(Libro libro)
@@ -163,6 +174,7 @@ namespace POO2_Proyecto.Controllers
         }
 
 
+
         public IActionResult Eliminar(int id)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -186,6 +198,8 @@ namespace POO2_Proyecto.Controllers
                 return View(registro);
             }
         }
+
+
 
         [HttpPost]
         public IActionResult Eliminar(Libro lib)
@@ -234,10 +248,8 @@ namespace POO2_Proyecto.Controllers
                     }
                 }
             }
-
             return historialPedidos;
         }
-
 
 
 
