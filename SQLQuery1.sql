@@ -119,15 +119,35 @@ begin
 	values(@idPedido, @dniCliente, @nomCliente, @emailCliente, @telefono)
 end
 
-create procedure sp_pedidoDetalle_agregar
-@idPedido varchar(8) output,
-@idLibro int,
-@precio decimal(10, 2),
-@cantidad int
-as
-	insert PedidoDetalle values(@idPedido, @idLibro, @precio, @cantidad)
+CREATE PROCEDURE sp_pedidoDetalle_agregar
+    @idPedido VARCHAR(8) output,
+    @idLibro INT,
+    @Precio DECIMAL(10, 2),
+    @Cantidad INT
+AS
+BEGIN
+    DECLARE @StockActual INT;
 
-	select*from PedidoDetalle
+    -- Obtener la cantidad disponible actual del libro
+    SELECT @StockActual = Stock FROM Libro WHERE IdLibro = @idLibro;
+
+    -- Verificar si hay suficiente stock
+    IF @StockActual >= @Cantidad
+    BEGIN
+        -- Agregar el detalle del pedido
+        INSERT INTO PedidoDetalle (IdPedido, IdLibro, Precio, Cantidad)
+        VALUES (@idPedido, @idLibro, @Precio, @Cantidad);
+
+        -- Actualizar el stock del libro
+        UPDATE Libro SET Stock = @StockActual - @Cantidad WHERE IdLibro = @idLibro;
+    END
+    ELSE
+    BEGIN
+        -- Manejar el caso en que no hay suficiente stock
+        THROW 51000, 'No hay suficiente stock disponible para este libro.', 1;
+    END
+END
+drop procedure sp_pedidoDetalle_agregar
 
 create procedure sp_historialPedidos
 as
